@@ -21,3 +21,9 @@ type Query {
   movies: [Movie]
   people: [Person]
 }
+
+type Mutation{
+   createMovies(title: String): Movie @cypher(statement:"CREATE (m:Movie) SET m.title = title RETURN m")
+}
+
+
